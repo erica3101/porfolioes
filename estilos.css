@@ -680,7 +680,12 @@ br {
     color: var(--secondary-version);
     margin-top: 1rem;
 }
-
+.footer-redes-compacto a:hover{
+    color: var(--light-bg-color);
+}
+   .footer-redes-compacto a {
+        color: var(--light-bg-color);
+}
 /* Mantenemos el hover en el color principal */
 .footer-redes-compacto a:hover{
     color: var(--secondary-version);
@@ -987,6 +992,7 @@ body.modal-abierto {
 
 /* --- AJUSTES PARA TABLET (max-width: 1024px) --- */
 @media (max-width: 1024px) {
+
     /* 1. TIPOGRAFÍA Y ESPACIADO GENERAL */
     .seccion {
         padding: 5rem 3%; 
@@ -1048,6 +1054,9 @@ body.modal-abierto {
         flex-wrap: wrap;
         justify-content: center;
     }
+    .footer-redes-compacto a {
+        color: var(--light-bg-color);
+    }
 }
 
 @media (max-width: 600px) {
@@ -1070,17 +1079,17 @@ body.modal-abierto {
         flex-direction: column;
         padding: 1rem 1rem;
     }
+.logo {
+    margin: 10px auto;
+  }
 
-    .logo {
-        margin-bottom: 1rem; 
-        width: 100%;
-        text-align: center;
-    }
-    
+ .logo img {
+    display: block;
+    margin: 0 auto;
+  }
     .nav-links {
         flex-wrap: wrap; 
         justify-content: center; 
-        gap: 0.8rem !important; 
     }
 
     nav .nav-links a {
@@ -1259,35 +1268,29 @@ body.modal-abierto {
         margin-top: 15px;
     }
     
-    /* --- 8. FOOTER COMPACTO --- */
-    #footer-compacto {
-        padding: 1rem 0 1rem 0;
-    }
 
-    .footer-contenido-alineado {
-        flex-direction: column;
-        gap: 1rem; 
-        padding: 0 1rem 1rem 1rem;
-    }
 
-    .footer-col-info {
-        flex-direction: row; 
-        gap: 1.5rem;
-    }
     
-    .footer-nav-compacto {
-        display: none;
-    }
-    
-    .footer-redes-compacto {
-        gap: 15px;
-    }
-  
-    
-    .titulo-principal {
+ .titulo-principal {
         font-size: 2rem;
     }
-  
+    
+  #footer-compacto .footer-contenido-alineado {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
+  #footer-compacto .logo {
+    margin: 10px auto;
+  }
 
+  #footer-compacto .logo img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .footer-redes-compacto {
+    margin-top: 10px;
+  }
 }
