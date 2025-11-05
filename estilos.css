@@ -1,0 +1,1339 @@
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+
+
+:root {
+    --primary-color: #16423c;
+    --secondary-color: #303030;
+    --secondary-version: #b0b0b0;
+    --dark-bg-color: #1a1a1a;
+    --light-bg-color: #F8F6F1;
+    --cielo-color: #e9ecef;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-color: var(--primary-color) var(--cielo-color);
+}
+
+
+body {
+    font-family: 'Segoe UI', 'Poppins', Verdana, Tahoma, sans-serif;
+    background-color: var(--light-bg-color);
+    line-height: 1.6;
+    color: var(--dark-bg-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilos para el header y la navegación */
+
+header {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--light-bg-color);
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo img{
+    height: 3rem;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+nav .nav-links a {
+    position: relative;
+    padding: .5rem 0;
+    transition: var(--transition);
+}
+
+nav .nav-links a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+nav .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+nav .nav-links a:hover:after {
+    width: 100%;
+}
+
+/* Estilos para las secciones generales */
+
+.seccion {
+    padding: 6rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    position: relative;
+    text-align: flex-start;
+}
+
+
+#sobremi,
+#detalle-sobremi {
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+    gap: 5rem;
+    padding-top: 3rem;
+    padding-inline: 4rem;
+}
+
+/* BLOQUE DE IMAGEN */
+.hero-img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-img img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* BLOQUE DE TEXTO */
+.sec-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* centramos los tres elementos */
+    align-items: flex-start;
+    gap: 2.3rem;
+    /* 🔹 menor separación entre h2, p y a */
+    padding: 0;
+}
+
+/* BLOQUE DE TEXTO */
+
+h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+#sobremi a,
+#detalle-sobremi a {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    transform: skew(-10deg);
+}
+
+#sobremi a:hover,
+#detalle-sobremi a:hover {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+}
+
+br {
+    margin-bottom: 1em;
+    /* Oculta los saltos de línea en pantallas grandes */
+}
+
+
+/* Estilos para el slider de logos */
+
+.logo-slider {
+
+    overflow: hidden;
+    padding: 20px 0;
+    width: 100%;
+    --animation-speed: 70s;
+}
+
+.logo-track {
+    display: flex;
+    white-space: nowrap;
+    width: fit-content;
+    animation: scroll-infinito var(--animation-speed) linear infinite;
+}
+
+.logo-item {
+    margin: 0 40px;
+    /* Espacio entre iconos */
+    display: inline-flex;
+    /* Asegura la alineación */
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    /* Altura del contenedor del icono */
+    font-size: 40px;
+    /* Tamaño del icono */
+    color: var(--primary-color);
+    /* Color base del icono */
+    transition: none !important; /* Evita cambios al pasar el fusor */
+    transform: none !important;
+    color: var(--primary-color) !important; /* Mantiene el mismo color */
+}
+
+/* Estilo para el ícono individual (la etiqueta i) */
+.logo-item i {
+    pointer-events: none;
+        transform: none !important; /* Sin salto o animación */
+
+    /* Evita interferencia con el evento 'mouseenter' del padre */
+}
+
+/* Pausa la animación al pasar el ratón */
+
+
+/* Keyframes (Se mantiene igual) */
+@keyframes scroll-infinito {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* --- Estilos de las Tarjetas (Refinados y con Filtro) --- */
+
+
+/* La imagen del proyecto es la clave aquí */
+.proyecto-card img {
+    width: 100%;
+    height: 60%;
+    max-height: 250px;
+    object-fit: cover;
+
+    /* (Se aplica globalmente) */
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
+    /* Transición suave */
+}
+
+/* Efecto al pasar el cursor sobre la TARJETA (no solo la imagen) */
+.proyecto-card:hover img {
+    filter: grayscale(0%);
+    /* Quita la escala de grises, mostrando la imagen a color */
+}
+
+/* Ajuste específico para el contenido de la tarjeta 2x2 */
+.proyecto-card.span-2x2 img {
+    max-height: 95%;
+    height: 90%;
+}
+
+.proyecto-card .proyecto-info p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+/* --- Resto de estilos del diseño en bloque (sin cambios) --- */
+
+/* Contenedor Grid (Optimizado) */
+.proyecto-contenedor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 3rem auto;
+    grid-auto-rows: minmax(200px, auto);
+}
+
+/* Estilos de la Tarjeta */
+.proyecto-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.1s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.proyecto-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenido de la tarjeta */
+.proyecto-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Título del proyecto */
+.proyecto-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+/* Botón "Ver Proyecto" */
+.proyecto-card .btn {
+    display: block;
+    padding: 10px 15px;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: var(--transition)
+}
+
+.proyecto-card .btn:hover {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+}
+
+/* Clases de Tamaño para el Patrón Asimétrico (Escritorio/Tablet) */
+.proyecto-card.span-2x2 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* --- Estilos de la sección Proyectos y Título --- */
+#proyectos {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #e9ecef;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+/* Pagina sobre mi */
+
+
+/* --- Estilos para Redes Sociales dentro de la Introducción --- */
+/* ======================================= */
+/* === ESTILOS ESPECÍFICOS PARA SOBRE MÍ (Detalle) === */
+/* ======================================= */
+
+/* --- Ayudas Generales --- */
+.centrado {
+    text-align: center;
+}
+
+.background-claro {
+    background-color: var(--cielo-color);
+    /* Un tono ligeramente diferente para contrastar con el fondo del body */
+}
+
+.divisor-seccion {
+    border: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    max-width: 40rem;
+    margin: 1rem auto;
+    opacity: 0.6;
+}
+
+
+/* 1. Sección Principal (Estilo Side-by-Side del Index) */
+
+
+/* Reutilizando la estructura de la imagen del index */
+
+
+/* #detalle-sobremi {
+	font-size: 2rem;
+	color: var(--primary-color);
+	margin-bottom: 0.5rem;
+} */
+
+.sub-seccion-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+    border-bottom: 2px solid var(--secondary-version);
+    padding-bottom: 5px;
+}
+
+
+/* --- Estilos de Botones de Contacto --- */
+
+.enlaces-contacto-sobremi {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    transform: skew(-10deg);
+}
+
+.btn-principal:hover {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25d366;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    transform: skew(-10deg);
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+}
+
+
+/* --- Estilos para Redes Sociales dentro de la Introducción (NUEVO) --- */
+
+.redes-sociales-intro {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--secondary-version);
+}
+
+.redes-sociales-intro p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.redes-sociales-intro a {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: var(--transition);
+    text-decoration: none;
+    color: white;
+    background-color: var(--secondary-color);
+    transform: none;
+}
+
+.redes-sociales-intro a:hover {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+}
+
+.redes-sociales-intro a i {
+    font-size: 1em;
+}
+
+
+/* 2. Sección de Habilidades Detalladas (LISTA SIMPLE - SIN TARJETAS) */
+
+.habilidades-lista-simple-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.habilidad-lista-bloque {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid var(--primary-color);
+}
+
+.bloque-titulo {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--secondary-version);
+    padding-bottom: 10px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.bloque-titulo i {
+    margin-right: 10px;
+    margin-top: 0.5rem;
+}
+
+.lista-herramientas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lista-herramientas li {
+    font-size: 1.05rem;
+    color: var(--dark-bg-color);
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.4;
+}
+
+.lista-herramientas li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-size: 1.8em;
+    line-height: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    transform: none;
+}
+
+/* ======================================= */
+/* === NUEVOS ESTILOS PARA SECCIÓN REDES SOCIALES (ACTUALIZADO) === */
+/* ======================================= */
+
+#redes-seccion {
+    background-color: var(--light-bg-color);
+    /* Fondo con el color secondary */
+    color: white;
+    /* Texto claro para el fondo oscuro */
+    padding: 8.5rem 5% ;
+}
+
+#redes-seccion .seccion-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.redes-iconos {
+    display: flex;
+    flex-wrap: wrap; /* Para que los botones se envuelvan en pantallas pequeñas */
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.redes-iconos a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--dark-bg-color); /* Fondo de los botones */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    transform: skew(-10deg); /* Misma inclinación que los otros botones */
+    text-decoration: none; /* Asegurar que no hay subrayado */
+    font-size: 1.1rem; /* Ajustar tamaño de fuente */
+}
+
+.redes-iconos a:hover {
+    background-color: var(--secondary-version);
+    /* Color de hover */
+    color: var(--dark-bg-color); /* Texto oscuro en hover */
+    transform: skew(-10deg) translateY(-3px); /* Pequeño efecto al pasar el ratón */
+}
+
+.redes-iconos a i {
+    font-size: 1.2em; /* Iconos un poco más grandes */
+}
+
+
+/* ======================================= */
+/* === ESTILOS PARA EL FOOTER (VERSIÓN ALINEADA A LA IZQUIERDA) === */
+/* ======================================= */
+
+#footer-compacto {
+    /* Mantenemos la base compacta y clara */
+    background-color: var(--primary-color);
+    color: var(--dark-bg-color);
+    padding: 2rem 0 1.5rem 0;
+    border-top: 1px solid var(--secondary-version);
+}
+
+
+.footer-contenido-alineado {
+    /* Replicamos la configuración central del #navbar */
+    max-width: 1400px; /* Igual al límite de tu nav */
+    margin: 0 auto; /* Centra todo el contenido */
+    padding: 0 2%; /* <-- ESTO ALINEA EL LOGO AL BORDE DEL CONTENIDO DEL NAV */
+
+    /* Propiedades de Flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Logo a la izquierda */
+
+
+/* Columna de Información (Enlaces + Redes) */
+.footer-col-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* Navegación central - Se mantiene, pero ahora alineada en el `col-info` */
+.footer-nav-compacto {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+/* Redes Sociales - Se mantiene igual */
+.footer-redes-compacto {
+    display: flex;
+    gap: 0.8rem;
+}
+/* ... (el resto de estilos de .footer-nav-compacto a:hover, .separador, .footer-redes-compacto, etc., se mantienen iguales) ... */
+
+
+/* Copyright (Lo centramos debajo de la línea) */
+.footer-copy-compacto p {
+    text-align: center; /* Aseguramos que el copyright siempre esté centrado */
+    font-size: 0.75rem;
+    color: var(--secondary-version);
+    margin-top: 1rem;
+}
+/* Redes Sociales - Iconos más claros */
+.footer-redes-compacto a, #porque{
+    font-size: 1.1rem;
+    /* CAMBIO CLAVE: Usamos el color gris claro */
+    color: var(--light-bg-color);
+    transition: color 0.3s ease;
+}
+
+/* Mantenemos el hover en el color principal */
+.footer-redes-compacto a:hover, #porque:hover{
+    color: var(--secondary-version);
+}
+#porque{
+text-align: center;
+display: block;
+}
+
+
+/* ======================================= */
+/* === ESTILOS PARA EL MODAL (VENTANA EMERGENTE) === */
+/* ======================================= */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Bloquea el scroll del body cuando el modal está abierto */
+body.modal-abierto {
+    overflow: hidden;
+}
+
+.modal-contenido {
+    background-color: var(--light-bg-color);
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cerrar-modal {
+    color: var(--dark-bg-color);
+    float: right;
+    font-size: 38px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-contenido h3 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-version);
+    padding-bottom: 10px;
+}
+
+/* Cuerpo del Modal (Flexbox para la disposición Imagen + Texto) */
+.modal-cuerpo {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.modal-cuerpo img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-descripcion-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-descripcion-container p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilos de las insignias de tecnología */
+#modal-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    color: var(--dark-bg-color);
+}
+
+.badge-tecnologia {
+    color: var(--dark-bg-color);
+  
+}
+.modal-links {
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+    width: 12%;          /* ancho relativo al contenedor */
+    max-width: 500px;    /* ancho máximo */
+    padding: 20px;       /* espacio interno */
+    /* centra el modal horizontalmente */
+    border-radius: 10px; /* opcional: bordes redondeados */
+}
+
+/* Botones dentro del modal */
+.modal-descripcion-container .btn  {
+    display: inline-block;
+    width: fit-content;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    transform: none; /* Quitar el skew */
+}
+
+.modal-descripcion-container .btn-secundario {
+    background-color: #333; /* Color oscuro para Behance/Github */
+    color: white;
+}
+
+.modal-descripcion-container .btn-secundario:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+
+/* ======================================= */
+/* === ESTILOS PARA LA SECCIÓN CONTACTO (Formulario) === */
+/* ======================================= */
+
+#contacto {
+    /* Fondo que ya tienes en tu HTML, pero aseguramos el padding y centrado */
+    padding: 6rem 5%; /* Ya definido en .seccion, pero reaseguramos */
+    background-color: var(--light-bg-color); /* Usamos tu variable */
+    text-align: center;
+}
+
+.contacto-contenido {
+    max-width: 550px; /* Limita el ancho del formulario para mejor lectura */
+    margin: 0 auto; /* Centra el bloque de formulario */
+}
+
+.intro-contacto {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: var(--secondary-color);
+}
+
+/* --- Grupos de Campo (Label + Input) --- */
+.grupo-form {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.grupo-form label {
+    display: block;
+    font-weight: 600; /* Coherente con otros textos importantes */
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    font-size: 1em;
+}
+.intro-contacto {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-top: 1rem;
+}
+/* --- Inputs y Textareas (Estilo plano y limpio) --- */
+.grupo-form input[type="text"],
+.grupo-form input[type="email"],
+.grupo-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--secondary-version); /* Borde suave */
+    border-radius: 8px;
+    background-color: white;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.grupo-form textarea {
+    resize: vertical; /* Permite solo redimensionar verticalmente */
+}
+
+.btn-cta {
+    /* ✨ Propiedades del Botón Principal */
+    display: inline-block;
+    background-color: var(--secondary-color); /* Fondo oscuro (igual que tu contacto/whatsapp) */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    
+    /* ✨ Propiedad clave: EL EFECTO INCLINADO */
+    transform: skew(-10deg);
+    
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+.btn-cta:hover {
+    /* Mismo hover que usas en otros botones */
+    background-color: var(--secondary-version);
+    color: var(--dark-bg-color);
+    /* Aplicar un pequeño movimiento extra además de la inclinación */
+    transform: skew(-10deg) translateY(-2px); 
+}
+/* Efecto de enfoque (Focus) */
+.grupo-form input:focus,
+.grupo-form textarea:focus {
+    border-color: var(--primary-color); /* Usa tu color primario al enfocar */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(22, 66, 60, 0.2); /* Sombra suave con color primario */
+}
+
+/* --- Mensajes de Validación --- */
+.error {
+    color: #dc3545; /* Rojo clásico para errores */
+    font-size: 0.9em;
+    margin-top: 5px;
+    min-height: 20px; /* Importante para evitar que la sección salte */
+}
+
+.exito {
+    color: var(--primary-color); /* Puedes usar el color primario para el éxito */
+    font-size: 1.1em;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+
+/* ===== Página /porque/ ===== */
+
+.contenedor-porque {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  color: var(--text-color, #333);
+  line-height: 1.6;
+}
+
+.titulo-principal {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--secondary-version, #444);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Secciones */
+.seccion-porque {
+  margin-bottom: 5rem;
+}
+
+.titulo-porque {
+  font-size: 2rem;
+  color: var(--accent-color, #644dff);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.descripcion-seccion {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1rem;
+}
+
+/* Imagen principal */
+.imagen-centrada {
+  display: flex;
+  justify-content: center;
+}
+
+.img-porque {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Galería encuesta */
+.galeria-encuesta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.img-encuesta {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.img-encuesta:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+
+/* === MEDIA QUERIES UNIFICADAS (Tablet y Móvil) === */
+
+
+/* --- AJUSTES PARA TABLET (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    /* 1. TIPOGRAFÍA Y ESPACIADO GENERAL */
+    .seccion {
+        padding: 5rem 3%; 
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1.15rem;
+    }
+
+    /* 2. SECCIÓN SOBRE MÍ */
+    #sobremi,
+    #detalle-sobremi {
+        min-height: auto; /* Permite que el contenido determine la altura */
+        gap: 3rem; 
+        padding-inline: 2rem;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+    
+    .hero-img img {
+        max-height: 350px;
+    }
+    
+    /* 3. PROYECTOS (Grid de 3 a 2 columnas) */
+    .proyecto-contenedor-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px; 
+        margin: 2rem auto;
+    }
+
+    /* Ajuste de la tarjeta 2x2 para la cuadrícula de 2 columnas */
+    .proyecto-card.span-2x2 {
+        grid-column: span 2; 
+        grid-row: span 1; /* Ocupa solo 1 fila para no ser demasiado alto */
+    }
+    
+    /* 4. HABILIDADES DETALLADAS */
+    .habilidades-lista-simple-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    /* 5. FOOTER (Alineación vertical) */
+    .footer-contenido-alineado {
+        flex-direction: column; 
+        gap: 1.5rem;
+    }
+
+    .footer-col-info {
+        flex-direction: column; 
+        gap: 1rem;
+    }
+
+    .footer-nav-compacto {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    /* --- General y Tipografía --- */
+    .seccion {
+        padding: 4rem 1rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        text-align: center; 
+    }
+
+    p {
+        font-size: 1rem;
+    }
+    
+    /* --- 🧭 NAV BAR --- */
+    #navbar {
+        flex-direction: column;
+        padding: 1rem 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem; 
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 0.8rem !important; 
+    }
+
+    nav .nav-links a {
+        font-size: 0.9rem; 
+        padding: 0.5rem 0.8rem; 
+    }
+
+    nav .nav-links a:after {
+        content: none;
+    }
+    
+    .modal-imagen {
+        display: none; 
+    }
+
+    /* --- 2. SECCIÓN SOBRE MÍ Y BOTONES PRINCIPALES (Armonizados) --- */
+    #sobremi, #detalle-sobremi {
+        flex-direction: column; 
+        padding-inline: 1rem;
+        gap: 2rem;
+    }
+
+    .hero-img {
+        order: -1;
+    }
+
+    .hero-img img {
+        max-height: 250px;
+    }
+
+    .sec-content {
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    /* 🌟 CORRECCIÓN CLAVE: Botón "Conóceme" 🌟 */
+    #sobremi .contacto a, /* Nuevo selector específico para el botón "Conóceme" */
+    #detalle-sobremi a {
+        transform: none; /* ELIMINA EL SKEW */
+        width: 80%;
+        max-width: 300px;
+        text-align: center;
+        /* Asegura que herede estilos de botón si los tiene */
+        display: block; 
+    }
+    
+    /* Contenedor del botón "Conóceme" */
+    #sobremi .contacto {
+        width: 100%; /* Permite centrar el botón */
+        display: flex;
+        justify-content: center;
+        list-style: none; /* Eliminar cualquier estilo de lista por si acaso */
+        padding: 0;
+        margin: 0;
+    }
+    
+    /* Contenedores de botones secundarios (si existen) */
+    .enlaces-contacto-sobremi {
+        flex-direction: column; 
+        width: 80%;
+        max-width: 300px;
+        gap: 0.8rem;
+    }
+
+    .enlaces-contacto-sobremi a {
+        width: 100%;
+        justify-content: center;
+        transform: none;
+        font-size: 0.95rem;
+    }
+    
+    .redes-sociales-intro {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-top: 0.5rem;
+    }
+
+    /* --- 3. PROYECTOS (Grid a una sola columna y color) --- */
+    .proyecto-contenedor-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .proyecto-card.span-2x2 {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .proyecto-card.span-2x2 img {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .proyecto-card img {
+        filter: grayscale(0%) !important;
+    }
+
+    /* --- 4. HABILIDADES DETALLADAS --- */
+    .habilidades-lista-simple-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .bloque-titulo {
+        font-size: 1.2rem;
+    }
+
+
+    /* --- 6. MODAL (Corregido para Armonía de Botones) --- */
+    .modal-contenido {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .cerrar-modal {
+        font-size: 30px;
+        top: 5px;
+        right: 15px;
+    }
+    
+    .modal-contenido h3 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    
+    .modal-cuerpo {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .modal-cuerpo img {
+        max-width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+    }
+    
+    .modal-links {
+        display: flex;
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: flex-start; 
+        gap: 10px; 
+        background-color: transparent; 
+        padding: 0; 
+        width: 100%; 
+        max-width: none;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .modal-links .btn {
+        width: auto;
+        display: inline-flex; 
+        justify-content: center;
+        margin-right: 0; 
+        transform: none;
+        font-size: 0.95rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .modal-descripcion-container p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    #modal-tecnologias {
+        margin-bottom: 15px;
+    }
+
+    /* --- 7. SECCIÓN CONTACTO (Formulario) --- */
+    .btn-cta {
+        width: 100%; 
+        transform: none;
+        margin-top: 15px;
+    }
+    
+    /* --- 8. FOOTER COMPACTO --- */
+    #footer-compacto {
+        padding: 1rem 0 1rem 0;
+    }
+
+    .footer-contenido-alineado {
+        flex-direction: column;
+        gap: 1rem; 
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .footer-col-info {
+        flex-direction: row; 
+        gap: 1.5rem;
+    }
+    
+    .footer-nav-compacto {
+        display: none;
+    }
+    
+    .footer-redes-compacto {
+        gap: 15px;
+    }
+    
+    /* --- 9. Página /porque/ --- */
+    .galeria-encuesta {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem;
+    }
+    
+    .titulo-principal {
+        font-size: 2rem;
+    }
+    .titulo-porque {
+        font-size: 1.5rem;
+    }
+
+
+
+}
