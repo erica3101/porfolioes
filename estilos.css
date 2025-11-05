@@ -680,21 +680,10 @@ br {
     color: var(--secondary-version);
     margin-top: 1rem;
 }
-/* Redes Sociales - Iconos más claros */
-.footer-redes-compacto a, #porque{
-    font-size: 1.1rem;
-    /* CAMBIO CLAVE: Usamos el color gris claro */
-    color: var(--light-bg-color);
-    transition: color 0.3s ease;
-}
 
 /* Mantenemos el hover en el color principal */
-.footer-redes-compacto a:hover, #porque:hover{
+.footer-redes-compacto a:hover{
     color: var(--secondary-version);
-}
-#porque{
-text-align: center;
-display: block;
 }
 
 
@@ -944,15 +933,8 @@ body.modal-abierto {
 }
 
 
-/* ===== Página /porque/ ===== */
 
-.contenedor-porque {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  color: var(--text-color, #333);
-  line-height: 1.6;
-}
+
 
 .titulo-principal {
   font-size: 2.5rem;
@@ -963,17 +945,6 @@ body.modal-abierto {
   letter-spacing: 2px;
 }
 
-/* Secciones */
-.seccion-porque {
-  margin-bottom: 5rem;
-}
-
-.titulo-porque {
-  font-size: 2rem;
-  color: var(--accent-color, #644dff);
-  text-align: center;
-  margin-bottom: 1rem;
-}
 
 .descripcion-seccion {
   text-align: center;
@@ -987,15 +958,6 @@ body.modal-abierto {
   display: flex;
   justify-content: center;
 }
-
-.img-porque {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 
 
 /* Galería encuesta */
@@ -1320,20 +1282,12 @@ body.modal-abierto {
     .footer-redes-compacto {
         gap: 15px;
     }
-    
-    /* --- 9. Página /porque/ --- */
-    .galeria-encuesta {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 1rem;
-    }
+  
     
     .titulo-principal {
         font-size: 2rem;
     }
-    .titulo-porque {
-        font-size: 1.5rem;
-    }
-
+  
 
 
 }
